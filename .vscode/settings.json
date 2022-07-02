@@ -1,0 +1,79 @@
+{
+  "git.ignoreLimitWarning": true,
+  "editor.formatOnSave": true,
+  "editor.fontSize": 18,
+  "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)",
+  "editor.fontFamily": "JetBrains Mono",
+  "auto-rename-tag.activationOnLanguage": ["html", "xml", "php", "javascript"],
+  "javascript.suggest.autoImports": true,
+  "extension.changeCase.commands": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "connectString": "postgres://usbwbd_integrispan:postgrespassword@localhost:5432/sbwbd",
+      "driver": "PostgreSQL",
+      "name": "IntegriSpan"
+    }
+  ],
+  "cSpell.words": [
+    "antd",
+    "Cascader",
+    "CHOKIDAR",
+    "dgraph",
+    "dind",
+    "gitlab",
+    "grahpql",
+    "hasura",
+    "Inps",
+    "Inpusts",
+    "Integri",
+    "Integridutos",
+    "INTEGRIDUTOS",
+    "integrispan",
+    "postgres",
+    "rrdls",
+    "subweb",
+    "typeorm",
+    "USEPOLLING",
+    "WEVERTONM"
+  ],
+  "editor.formatOnType": true,
+  "formattingToggle.affects": ["formatOnSave"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "npm-intellisense.importES6": true,
+  "npm-intellisense.importQuotes": "'",
+  "npm-intellisense.importLinebreak": ";\r\n",
+  "npm-intellisense.importDeclarationType": "const",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    }
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#1f6fd0",
+    "activityBar.activeBorder": "#ee90bb",
+    "activityBar.background": "#1f6fd0",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ee90bb",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#1f6fd0",
+    "statusBar.background": "#1857a4",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#1f6fd0",
+    "statusBarItem.remoteBackground": "#1857a4",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#1857a4",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#1857a499",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#1857a4"
+}
