@@ -21,12 +21,12 @@ const { readFile, writeFile } = fs
 class OrderRepository {
   async insert(order: TOrderWithoutId): Promise<IOrder> {
     const data: IData = JSON.parse((await readFile(FILE_NAME)).toString())
-    data.nextId++
     const newOrder: IOrder = {
       id: data.nextId,
       ...order,
       timestamp: new Date().toISOString(),
     }
+    data.nextId++
     data.pedidos.push(newOrder)
     await writeFile(FILE_NAME, JSON.stringify(data, null, 2))
     return newOrder
