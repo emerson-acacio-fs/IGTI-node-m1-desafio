@@ -7,7 +7,7 @@ import { errors } from 'celebrate'
 import { AppError } from 'shared/errors/AppError'
 import { routes } from './routes'
 
-global.FILE_NAME = 'car-list.json'
+global.FILE_NAME = 'pedidos.json'
 
 const app = express()
 app.use(cors())
