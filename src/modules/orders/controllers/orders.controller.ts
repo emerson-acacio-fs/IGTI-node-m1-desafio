@@ -9,7 +9,7 @@ import { updateOrderDeliveredService } from '../services/update.order.delivered.
 import { updateOrderService } from '../services/update.order.service'
 
 class OrdersController {
-  async insertOrder(request: Request, response: Response): Promise<Response> {
+  async insertOrder(request: Request, response: Response) {
     const { cliente, produto, valor } = request.body
     const newOrder = await createOrderService.execute({
       cliente,
@@ -17,9 +17,9 @@ class OrdersController {
       valor,
       entregue: false,
     })
-    return response.send(newOrder)
+    response.send(newOrder)
   }
-  async updateOrder(request: Request, response: Response): Promise<Response> {
+  async updateOrder(request: Request, response: Response) {
     const { id } = request.params
     const { cliente, produto, valor, entregue } = request.body
     const newOrder = await updateOrderService.execute({
@@ -29,53 +29,41 @@ class OrdersController {
       valor,
       entregue,
     })
-    return response.send(newOrder)
+    response.send(newOrder)
   }
-  async updateDelivered(
-    request: Request,
-    response: Response,
-  ): Promise<Response> {
+  async updateDelivered(request: Request, response: Response) {
     const { id } = request.params
     const { entregue } = request.body
     const newOrder = await updateOrderDeliveredService.execute(
       parseInt(id),
       entregue,
     )
-    return response.send(newOrder)
+    response.send(newOrder)
   }
-  async delete(request: Request, response: Response): Promise<Response> {
+  async delete(request: Request, response: Response) {
     const { id } = request.params
     const deletedId = await deleteOrderService.execute(parseInt(id))
-    return response.send({ id: deletedId })
+    response.send({ id: deletedId })
   }
-  async showById(request: Request, response: Response): Promise<Response> {
+  async showById(request: Request, response: Response) {
     const { id } = request.params
     const order = await showByIdOrderService.execute(parseInt(id))
-    return response.send(order)
+    response.send(order)
   }
-  async getTotalDelivered(
-    request: Request,
-    response: Response,
-  ): Promise<Response> {
+  async getTotalDelivered(request: Request, response: Response) {
     const { client } = request.params
 
     const total = await totalDeliveredOrderService.execute(client)
-    return response.send({ cliente: client, total })
+    response.send({ cliente: client, total })
   }
-  async getTotalDeliveredByProduct(
-    request: Request,
-    response: Response,
-  ): Promise<Response> {
+  async getTotalDeliveredByProduct(request: Request, response: Response) {
     const { product } = request.params
     const total = await totalDeliveredByProductOrderService.execute(product)
-    return response.send({ produto: product, total })
+    response.send({ produto: product, total })
   }
-  async getMoreDelivered(
-    request: Request,
-    response: Response,
-  ): Promise<Response> {
+  async getMoreDelivered(request: Request, response: Response) {
     const total = await getMoreDeliveredOrderService.execute()
-    return response.send(total)
+    response.send(total)
   }
 }
 
